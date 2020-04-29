@@ -62,5 +62,32 @@ public class Usertestor {
         Assert.assertEquals("False",result);
     }
 
+    //Moblie Number
+
+    @Test
+    public void MobileNumberTrue() {
+        UserMethodTesting tester = new UserMethodTesting();
+        String result = tester.validateMobileNumber("1234567890");
+        Assert.assertEquals("True",result);
+    }
+    @Test
+    public void MobileNumberCountryCodeSpaceTrue() {
+        UserMethodTesting tester = new UserMethodTesting();
+        String result = tester.validateMobileNumber("91 1234567890");
+        Assert.assertEquals("True",result);
+    }
+    @Test
+    public void MobileNumberCountryCodeWSpaceFalse() {
+        UserMethodTesting tester = new UserMethodTesting();
+        String result = tester.validateMobileNumber("911234567890");
+        Assert.assertEquals("False",result);
+    }
+    @Test
+    public void MobileNumberCharacterSpecialFalse() {
+        UserMethodTesting tester = new UserMethodTesting();
+        String result = tester.validateMobileNumber("12345678A@");
+        Assert.assertEquals("False",result);
+    }
+
 }
 
