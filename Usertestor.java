@@ -89,5 +89,58 @@ public class Usertestor {
         Assert.assertEquals("False",result);
     }
 
+
+    //Password Rule-1 min 8 Characters
+    @Test
+    public void PasswordMinimumEightCharacterTrue() {
+        UserMethodTesting validator = new UserMethodTesting();
+        String result = validator.validatePassword("Abcd1234");
+        Assert.assertEquals("True",result);
+    }
+
+    @Test
+    public void PasswordLessTEightCharacterFalse() {
+        UserMethodTesting validator = new UserMethodTesting();
+        String result = validator.validatePassword("Abcd12");
+        Assert.assertEquals("False",result);
+    }
+
+    //Password Rule-2 should have atleast 1 Uppercase Character
+    @Test
+    public void PasswordAtleastOneUpperCaseCharacterTrue() {
+        UserMethodTesting validator = new UserMethodTesting();
+        String result = validator.validatePassword("abcABCabc1");
+        Assert.assertEquals("True",result);
+    }
+
+    @Test
+    public void PasswordNotUpperCaseCharacterFalse() {
+        UserMethodTesting validator = new UserMethodTesting();
+        String result = validator.validatePassword("abcabcabc");
+        Assert.assertEquals("False",result);
+    }
+
+    //Password Rule-3 should have atleast 1  Number
+    @Test
+    public void PasswordAtleastOneNumericNumberTrue() {
+        UserMethodTesting validator = new UserMethodTesting();
+        String result = validator.validatePassword("abcABCab1");
+        Assert.assertEquals("True",result);
+    }
+    @Test
+    public void PasswordNotNumericNumberFalse() {
+        UserMethodTesting validator = new UserMethodTesting();
+        String result = validator.validatePassword("Aabcabcabc");
+        Assert.assertEquals("False",result);
+    }
+    //Password Rule-4 should have 1 Special character
+    @Test
+    public void PasswordOneSpecialCharacterTrue() {
+        UserMethodTesting validator = new UserMethodTesting();
+        String result = validator.validatePassword("abcABCab1@");
+        Assert.assertEquals("True",result);
+    }
+
+
 }
 
