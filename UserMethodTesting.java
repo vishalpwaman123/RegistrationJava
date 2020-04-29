@@ -9,6 +9,7 @@ public class UserMethodTesting {
     private static final String EMAIL_PATTERN = "^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2,3})?$";
     private static final String MOBILE_PATTERN = "^([0-9]{2}[ ])?([1-9]{1}[0-9]{9})$";
     private static final String PASSWORD_PATTERN = "((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.[@#$%!]).{8,})";
+    private static final String ALLEMAIL_PATTERN = "^[a-zA-Z0-9]{3,}@[a-z.]+[a-z]{2,}$";
 
     public String validateFirstName(String fname) {
         Pattern pattern = Pattern.compile(PATTERN);
@@ -67,6 +68,17 @@ public class UserMethodTesting {
         }
     }
 
+    public String validateAllEmailAddress(String email) {
+        Pattern pattern = Pattern.compile(ALLEMAIL_PATTERN);
+
+        if( pattern.matcher(email).matches() == true)
+        {
+            return "True";
+        }else
+        {
+            return "False";
+        }
+    }
 }
 
 
