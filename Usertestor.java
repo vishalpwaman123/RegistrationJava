@@ -31,6 +31,14 @@ public class Usertestor {
         String result = tester.validateFirstName("Vishal@");
         Assert.assertEquals("False", result);
     }
+    
+    //Last Name
+    @Test
+    public void LastNameTrue() {
+        UserMethodTesting tester=new UserMethodTesting();
+        String result = tester.validateLastName("Shaikh");
+        Assert.assertEquals("True",result);
+    }
 
 }
 
