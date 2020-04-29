@@ -13,6 +13,17 @@ public String validateFirstName(String fname) {
             return "False";
         }
     }
+    
+    	public String validateLastName(String lname) {
+        Pattern pattern = Pattern.compile(PATTERN);
+        if( pattern.matcher(lname).matches() == true)
+        {
+            return "True";
+        }else
+        {
+            return "False";
+        }
+    }
 }
 
 
