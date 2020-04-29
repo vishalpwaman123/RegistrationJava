@@ -141,6 +141,14 @@ public class Usertestor {
         Assert.assertEquals("True",result);
     }
 
+	
+	//All Email 	
+    @Test
+    public void AllEmailTrue() {
+        UserMethodTesting tester = new UserMethodTesting();
+        String result = tester.validateAllEmailAddress("vishalpwaman1997@bridgelabz.com");
+        Assert.assertEquals("True",result);
+    }
 
 }
 
