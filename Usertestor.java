@@ -44,21 +44,21 @@ public class Usertestor {
     @Test
     public void EmailTrue() {
         UserMethodTesting tester = new UserMethodTesting();
-        boolean result = tester.validateEmailAddress("vishalpwaman1997@bridgelabz.com");
+        String result = tester.validateEmailAddress("vishalpwaman1997@bridgelabz.com");
         Assert.assertEquals("True",result);
     }
 
     @Test
     public void EmailNotHaveSpecialSymbolFalse() {
         UserMethodTesting tester = new UserMethodTesting();
-        boolean result = tester.validateEmailAddress("vishalpwaman1997bridglabz.com");
+        String result = tester.validateEmailAddress("vishalpwaman1997bridglabz.com");
         Assert.assertEquals("False",result);
     }
 
     @Test
     public void EmailInvalidFalse() {
         UserMethodTesting tester = new UserMethodTesting();
-        boolean result = tester.validateEmailAddress("vishalpwaman1997@.com");
+        String result = tester.validateEmailAddress("vishalpwaman1997@.com");
         Assert.assertEquals("False",result);
     }
 
